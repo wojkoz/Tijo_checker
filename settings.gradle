@@ -1,0 +1,2 @@
+rootProject.name='TiJO_checker'
+include ':app'
