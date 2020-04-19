@@ -1,18 +1,19 @@
 package com.example.grades
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.navArgs
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.grade_details_fragment.*
+import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 
 class GradeDetails : Fragment() {
 
-    private lateinit var viewModel: GradeDetailsViewModel
+    private var index: Int? = null
+    private val viewModel : GradeDetailsViewModel by viewModel{ parametersOf(index) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,12 +24,11 @@ class GradeDetails : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(GradeDetailsViewModel::class.java)
         // TODO: Use the ViewModel
 
-        val args = arguments?.get("indexId")
+        index = arguments?.get("indexId") as Int?
 
-        hello.text = args.toString();
+        hello.text = index.toString();
     }
 
 }
