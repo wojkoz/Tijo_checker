@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/listBackground"
+    tools:context="com.example.grades.groupie.IndexInfoItem">
+
+    <TextView
+        android:id="@+id/mark_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="mark" />
+
+    <TextView
+        android:id="@+id/group_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/mark_tv"
+        tools:text="group" />
+
+    <TextView
+        android:id="@+id/lecture_points_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toStartOf="@+id/group_tv"
+        app:layout_constraintTop_toBottomOf="@+id/group_tv"
+        tools:text="lecturePoints" />
+
+    <TextView
+        android:id="@+id/homework_points_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toStartOf="@+id/lecture_points_tv"
+        app:layout_constraintTop_toBottomOf="@+id/lecture_points_tv"
+        tools:text="homework points" />
+
+    <TextView
+        android:id="@+id/presence_counter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toStartOf="@+id/homework_points_tv"
+        app:layout_constraintTop_toBottomOf="@+id/homework_points_tv"
+        tools:text="presence counter" />
+
+    <TextView
+        android:id="@+id/absence_counter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toStartOf="@+id/presence_counter_tv"
+        app:layout_constraintTop_toBottomOf="@+id/presence_counter_tv"
+        tools:text="absence counter" />
+
+    <TextView
+        android:id="@+id/all_points_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        app:layout_constraintStart_toStartOf="@+id/absence_counter_tv"
+        app:layout_constraintTop_toBottomOf="@+id/absence_counter_tv"
+        tools:text="all points" />
+
+    <TextView
+        android:id="@+id/details_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="191dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/details"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/all_points_tv" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="56dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/mark"
+        android:textColor="@android:color/secondary_text_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/group"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/lecture_points"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/homework_points"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/presence_counter"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/absence_counter"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/artifika"
+        android:text="@string/all_points"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

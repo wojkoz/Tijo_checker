@@ -40,7 +40,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation project(":core")
-    implementation project(":grades")
+    implementation project(':index_view')
 
 
 }

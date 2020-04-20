@@ -1,4 +1,4 @@
 rootProject.name='TiJO_checker'
 include ':app'
 include ':core'
-include ':grades'
+include ':index_view'
