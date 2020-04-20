@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/gradesList"
-        android:name="com.example.grades.GradesList"
+        android:name="com.example.grades.fragments.GradesList"
         android:label="grades_list_fragment"
         tools:layout="@layout/grades_list_fragment" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/gradeDetails"
-        android:name="com.example.grades.GradeDetails"
+        android:name="com.example.grades.fragments.GradeDetails"
         android:label="grade_details_fragment"
         tools:layout="@layout/grade_details_fragment" >
         <argument

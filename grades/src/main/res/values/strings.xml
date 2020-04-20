@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="details">Details</string>
+    <string name="mark">Mark:</string>
+    <string name="group">Group:</string>
+    <string name="lecture_points">Lecture points:</string>
+    <string name="homework_points">Homework points:</string>
+    <string name="presence_counter">Presence counter</string>
+    <string name="absence_counter">Absence counter</string>
+    <string name="all_points">All points</string>
+</resources>

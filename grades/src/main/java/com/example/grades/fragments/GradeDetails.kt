@@ -1,10 +1,11 @@
-package com.example.grades
+package com.example.grades.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.grades.R
 import kotlinx.android.synthetic.main.grade_details_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
