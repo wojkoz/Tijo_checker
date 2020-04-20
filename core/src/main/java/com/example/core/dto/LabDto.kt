@@ -1,4 +1,7 @@
 package com.example.core.dto
 
-class LabDto {
-}
+data class LabDto(
+    val dateOfLab: String,
+    val points: Int,
+    val presence: Boolean
+)

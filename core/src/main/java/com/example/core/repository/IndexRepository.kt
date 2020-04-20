@@ -1,9 +1,9 @@
 package com.example.core.repository
 
-import com.example.core.entity.Index
-import com.example.core.entity.IndexDetails
+import com.example.core.dto.IndexDetailsDto
+import com.example.core.dto.IndexDto
 
 interface IndexRepository {
-    suspend fun getAllIndexes() : List<Index>
-    suspend fun getIndexDetails(index: Int): IndexDetails
+    suspend fun getAllIndexes() : List<IndexDto>
+    suspend fun getIndexDetails(index: Int): IndexDetailsDto
 }

@@ -1,4 +1,7 @@
 package com.example.core.dto
 
-class IndexDetailsDto {
-}
+data class IndexDetailsDto(
+    val group: String,
+    val index: String,
+    val labs: List<LabDto>
+)

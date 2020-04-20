@@ -1,7 +1,7 @@
 package com.example.grades.groupie
 
 import androidx.navigation.findNavController
-import com.example.core.entity.Index
+import com.example.core.dto.IndexDto
 import com.example.grades.R
 import com.example.grades.fragments.IndexInfoListDirections
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
@@ -9,7 +9,7 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.index_info_item.view.*
 
 
-class IndexInfoItem(private val indexItem: Index) : Item() {
+class IndexInfoItem(private val indexItem: IndexDto) : Item() {
 
     override fun getLayout(): Int = R.layout.index_info_item
 
