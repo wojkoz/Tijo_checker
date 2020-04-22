@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.core.dto.IndexDetailsDto
+import com.example.core.resource.Status
 import com.example.grades.R
+import com.example.grades.groupie.ErrorMessageHeader
 import com.example.grades.groupie.HeaderExpandable
 import com.example.grades.groupie.IndexInfoDetailItem
 import com.xwray.groupie.ExpandableGroup
@@ -42,24 +46,38 @@ class IndexInfoDetails : Fragment() {
         }
 
 
-        viewModel.data.observe(viewLifecycleOwner, Observer { indexDetails ->
-            index_detail_tv.text = indexDetails.index
-            group_detail_tv.text = indexDetails.group
-
-            var labCounter = indexDetails.labs.size
-
+        viewModel.data.observe(viewLifecycleOwner, Observer {
             groupieAdapter.clear()
-            indexDetails.labs.forEach {
-                ExpandableGroup(HeaderExpandable("Lab $labCounter" ), false).apply {
-                    add(Section(IndexInfoDetailItem(it)))
-                    groupieAdapter.add(this)
-                }
-                labCounter--
+            when(it.status){
+                Status.SUCCESS -> showItems(it.data!!)
+                Status.ERROR -> showMessage(it.message!!)
+                else -> showMessage(getString(R.string.loading_string))
             }
 
         })
 
 
+    }
+
+    private fun showItems(indexDetails: IndexDetailsDto) {
+        index_detail_tv.text = indexDetails.index
+        group_detail_tv.text = indexDetails.group
+
+        var labCounter = indexDetails.labs.size
+
+
+        indexDetails.labs.forEach {
+            ExpandableGroup(HeaderExpandable("Lab $labCounter"), false).apply {
+                add(Section(IndexInfoDetailItem(it)))
+                groupieAdapter.add(this)
+            }
+            labCounter--
+        }
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        groupieAdapter.add(Section(ErrorMessageHeader(message)))
     }
 
 }

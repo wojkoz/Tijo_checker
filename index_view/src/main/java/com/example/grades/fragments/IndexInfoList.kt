@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.core.dto.IndexDto
+import com.example.core.resource.Status
 import com.example.grades.R
+import com.example.grades.groupie.ErrorMessageHeader
 import com.example.grades.groupie.HeaderExpandable
 import com.example.grades.groupie.IndexInfoItem
 import com.xwray.groupie.ExpandableGroup
@@ -39,17 +43,31 @@ class IndexInfoList : Fragment() {
             adapter = groupieAdapter
         }
 
-        viewModel.data.observe(viewLifecycleOwner, Observer { list ->
+        viewModel.data.observe(viewLifecycleOwner, Observer {
             groupieAdapter.clear()
 
-           list.forEach {
-               ExpandableGroup(HeaderExpandable(it.index), false).apply {
-                   add(Section(IndexInfoItem(it)))
-                   groupieAdapter.add(this)
-               }
-           }
+            when(it.status){
+                Status.SUCCESS -> showItems(it.data!!)
+                Status.ERROR -> showMessage(it.message!!)
+                else -> showMessage(getString(R.string.loading_string))
+            }
+
         })
 
+    }
+
+    private fun showItems(list: List<IndexDto>) {
+        list.forEach {
+            ExpandableGroup(HeaderExpandable(it.index), false).apply {
+                add(Section(IndexInfoItem(it)))
+                groupieAdapter.add(this)
+            }
+        }
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        groupieAdapter.add(Section(ErrorMessageHeader(message)))
     }
 
 
