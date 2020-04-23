@@ -1,7 +1,6 @@
 package com.example.core.koin
 
-import com.example.core.mapper.MapIndexDetailsToDto
-import com.example.core.mapper.MapListToDto
+import com.example.core.database.IndexDatabase
 import com.example.core.network.NetworkRepository
 import com.example.core.repository.IndexRepository
 import com.example.core.repository.indexRepositoryImpl.IndexRepositoryImpl
@@ -13,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 val repositoryModule = module {
-    single<IndexRepository> {  IndexRepositoryImpl(networkRepository = get(), itemMapper =  MapIndexDetailsToDto(), listMapper =  MapListToDto(), responseHandler = get()) }
+    single<IndexRepository> {  IndexRepositoryImpl(networkRepository = get(), responseHandler = get(), database = get()) }
     single<ResponseHandler> {ResponseHandlerImpl()}
 }
 
@@ -34,4 +33,8 @@ val retrofitModule = module {
 
     single { provideNetworkRepository() }
 
+}
+
+val roomModule = module {
+   single<IndexDatabase> { IndexDatabase.getDatabase(get())!! }
 }

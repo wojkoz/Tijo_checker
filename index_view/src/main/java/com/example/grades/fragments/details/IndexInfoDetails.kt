@@ -50,8 +50,9 @@ class IndexInfoDetails : Fragment() {
             groupieAdapter.clear()
             when(it.status){
                 Status.SUCCESS -> showItems(it.data!!)
-                Status.ERROR -> showMessage(it.message!!)
-                else -> showMessage(getString(R.string.loading_string))
+                Status.ERROR -> {showMessage(it.message!!, it.data!!.labs.isNullOrEmpty())
+                                showItems(it.data!!)}
+                else -> showMessage(getString(R.string.loading_string), true)
             }
 
         })
@@ -63,21 +64,20 @@ class IndexInfoDetails : Fragment() {
         index_detail_tv.text = indexDetails.index
         group_detail_tv.text = indexDetails.group
 
-        var labCounter = indexDetails.labs.size
-
 
         indexDetails.labs.forEach {
-            ExpandableGroup(HeaderExpandable("Lab $labCounter"), false).apply {
+            ExpandableGroup(HeaderExpandable(it.labName), false).apply {
                 add(Section(IndexInfoDetailItem(it)))
                 groupieAdapter.add(this)
             }
-            labCounter--
         }
     }
 
-    private fun showMessage(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        groupieAdapter.add(Section(ErrorMessageHeader(message)))
+    private fun showMessage(message: String, showLayout: Boolean) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        if(showLayout){
+            groupieAdapter.add(Section(ErrorMessageHeader(message)))
+        }
     }
 
 }

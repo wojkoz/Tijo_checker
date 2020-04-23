@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.core.dto.IndexDetailsDto
 import com.example.core.repository.IndexRepository
 import com.example.core.resource.Resource
+import com.example.core.resource.Status
 import kotlinx.coroutines.launch
 
 class IndexInfoDetailsViewModel(private val index: Int, private val repository: IndexRepository) : ViewModel() {
@@ -16,10 +17,11 @@ class IndexInfoDetailsViewModel(private val index: Int, private val repository: 
 
 
     private fun getData() = viewModelScope.launch {
-        _data.postValue(repository.getIndexDetails(index))
+        _data.postValue(repository.getDetails(index))
     }
 
     init {
+        _data.postValue(Resource(Status.LOADING, null, "Loading"))
         getData()
     }
 }

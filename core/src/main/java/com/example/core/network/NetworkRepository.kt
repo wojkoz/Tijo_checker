@@ -1,7 +1,7 @@
 package com.example.core.network
 
-import com.example.core.entity.Index
-import com.example.core.entity.IndexDetails
+import com.example.core.entity.retrofit.Index
+import com.example.core.entity.retrofit.IndexDetails
 import retrofit2.http.GET
 import retrofit2.http.Path
 

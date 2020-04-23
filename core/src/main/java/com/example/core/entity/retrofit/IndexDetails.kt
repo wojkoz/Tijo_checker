@@ -1,4 +1,4 @@
-package com.example.core.entity
+package com.example.core.entity.retrofit
 
 
 import com.squareup.moshi.Json

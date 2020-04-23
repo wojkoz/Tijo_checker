@@ -48,8 +48,9 @@ class IndexInfoList : Fragment() {
 
             when(it.status){
                 Status.SUCCESS -> showItems(it.data!!)
-                Status.ERROR -> showMessage(it.message!!)
-                else -> showMessage(getString(R.string.loading_string))
+                Status.ERROR -> {showMessage(it.message!!, it.data.isNullOrEmpty())
+                                showItems(it.data!!)}
+                else -> showMessage(getString(R.string.loading_string), true)
             }
 
         })
@@ -65,9 +66,12 @@ class IndexInfoList : Fragment() {
         }
     }
 
-    private fun showMessage(message: String) {
+    private fun showMessage(message: String, showLayout: Boolean) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        groupieAdapter.add(Section(ErrorMessageHeader(message)))
+        if(showLayout){
+            groupieAdapter.add(Section(ErrorMessageHeader(message)))
+        }
+
     }
 
 
