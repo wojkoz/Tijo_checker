@@ -71,4 +71,11 @@ class IndexRepositoryImpl(private val networkRepository: NetworkRepository,
         }
 
     }
+
+    override suspend fun getIndexBynumber(number: Int): Resource<List<IndexDto>> {
+        val bySomeNumbers = database.indexDao().getBySomeNumbers(number)
+        val dtoList = indexMapper.mapIndexEntityToDto(bySomeNumbers)
+
+        return Resource(status = Status.SUCCESS, data = dtoList, message = null)
+    }
 }

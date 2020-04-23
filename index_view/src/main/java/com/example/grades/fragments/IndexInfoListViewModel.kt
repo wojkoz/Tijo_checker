@@ -21,6 +21,16 @@ class IndexInfoListViewModel(private val repository: IndexRepository) : ViewMode
         _data.postValue(repository.getAllIndexes())
     }
 
+    fun onSearch(number: Int){
+        viewModelScope.launch {
+            _data.postValue(repository.getIndexBynumber(number))
+        }
+    }
+
+    fun onResetData(){
+        getData()
+    }
+
     init {
         _data.postValue(Resource(Status.LOADING, null, "Loading"))
         getData()
