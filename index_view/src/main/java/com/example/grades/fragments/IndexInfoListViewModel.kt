@@ -23,7 +23,7 @@ class IndexInfoListViewModel(private val repository: IndexRepository) : ViewMode
 
     fun onSearch(number: Int){
         viewModelScope.launch {
-            _data.postValue(repository.getIndexBynumber(number))
+            _data.postValue(repository.getIndexByNumber(number))
         }
     }
 
