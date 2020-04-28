@@ -66,8 +66,8 @@ class IndexInfoDetails : Fragment() {
 
 
         indexDetails.labs.forEach {
-            ExpandableGroup(HeaderExpandable(it.labName), false).apply {
-                add(Section(IndexInfoDetailItem(it)))
+            ExpandableGroup(HeaderExpandable(requireContext(), it.labName), false).apply {
+                add(Section(IndexInfoDetailItem(requireContext(), it)))
                 groupieAdapter.add(this)
             }
         }

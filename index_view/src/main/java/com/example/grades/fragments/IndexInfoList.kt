@@ -38,7 +38,6 @@ class IndexInfoList : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
         recyclerView.apply {
             layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL ,false)
             adapter = groupieAdapter
@@ -77,8 +76,8 @@ class IndexInfoList : Fragment() {
 
     private fun showItems(list: List<IndexDto>) {
         list.forEach {
-            ExpandableGroup(HeaderExpandable(it.index), false).apply {
-                add(Section(IndexInfoItem(it)))
+            ExpandableGroup(HeaderExpandable(requireContext(), it.index), false).apply {
+                add(Section(IndexInfoItem(requireContext(), it)))
                 groupieAdapter.add(this)
             }
         }
