@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="listBackground">#896DBA</color>
+    <color name="background">#FF303030</color>
+    <color name="darkGray">#FF303030</color>
+    <color name="amberAccent">#FFFFC107</color>
+    <color name="lighter">#9E9E9E</color>
 </resources>

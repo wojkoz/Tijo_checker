@@ -14,7 +14,7 @@ class IndexInfoDetailItem(private val context: Context, private val itemLab: Lab
             itemView.presence_chb.animation = AnimationUtils.loadAnimation(context, R.anim.right_to_left)
             itemView.date_of_lab_tv.animation = AnimationUtils.loadAnimation(context, R.anim.right_to_left)
             itemView.points_detail_tv.animation = AnimationUtils.loadAnimation(context, R.anim.right_to_left)
-            
+
 
             itemView.presence_chb.isChecked = itemLab.presence
             itemView.date_of_lab_tv.text = itemLab.dateOfLab

@@ -4,22 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/listBackground">
+    android:background="@color/background">
 
-    <TextView
-        android:id="@+id/headter_tv"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="191dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="@font/artifika"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/background"
+        android:textAlignment="center"
+        app:cardBackgroundColor="@color/background"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="header" />
+        app:strokeColor="@color/amberAccent"
+        app:strokeWidth="0dp"
+        >
+
+        <TextView
+            android:id="@+id/headter_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/artifika"
+            android:textAlignment="center"
+            android:textColor="@color/amberAccent"
+            android:textSize="24sp"
+            tools:text="header" />
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
