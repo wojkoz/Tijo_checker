@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +13,7 @@ import com.example.grades.R
 import com.example.grades.groupie.ErrorMessageHeader
 import com.example.grades.groupie.HeaderExpandable
 import com.example.grades.groupie.IndexInfoDetailItem
+import com.google.android.material.snackbar.Snackbar
 import com.xwray.groupie.ExpandableGroup
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -66,15 +66,15 @@ class IndexInfoDetails : Fragment() {
 
 
         indexDetails.labs.forEach {
-            ExpandableGroup(HeaderExpandable(it.labName), false).apply {
-                add(Section(IndexInfoDetailItem(it)))
+            ExpandableGroup(HeaderExpandable(requireContext(), it.labName), false).apply {
+                add(Section(IndexInfoDetailItem(requireContext(), it)))
                 groupieAdapter.add(this)
             }
         }
     }
 
     private fun showMessage(message: String, showLayout: Boolean) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        Snackbar.make(requireView(), message, Snackbar.LENGTH_SHORT).show()
         if(showLayout){
             groupieAdapter.add(Section(ErrorMessageHeader(message)))
         }

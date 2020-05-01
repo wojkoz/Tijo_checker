@@ -35,8 +35,10 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //material
+    api 'com.google.android.material:material:1.1.0'
     //navigation
-    def nav_version = "2.3.0-alpha05"
+    def nav_version = "2.3.0-alpha06"
 
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"
     api "androidx.navigation:navigation-ui-ktx:$nav_version"

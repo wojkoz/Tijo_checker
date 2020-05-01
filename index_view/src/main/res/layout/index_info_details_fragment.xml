@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/listBackground"
+    android:background="@color/background"
     tools:context=".fragments.details.IndexInfoDetails">
 
     <TextView
@@ -17,7 +17,8 @@
         android:fontFamily="@font/artifika"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="index_number" />
+        tools:text="index_number"
+        android:textColor="@color/amberAccent"/>
 
     <TextView
         android:id="@+id/textView5"
@@ -28,7 +29,8 @@
         android:fontFamily="@font/artifika"
         android:text="@string/index"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/lighter"/>
 
     <TextView
         android:id="@+id/group_detail_tv"
@@ -39,7 +41,8 @@
         android:fontFamily="@font/artifika"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/index_detail_tv"
-        tools:text="@string/group" />
+        tools:text="@string/group"
+        android:textColor="@color/amberAccent"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -49,7 +52,8 @@
         android:fontFamily="@font/artifika"
         android:text="@string/group"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        android:textColor="@color/lighter"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewDetail"

@@ -29,8 +29,8 @@ class IndexDetailsMapper {
         }
     }
 
-    fun mapIndexDetailsEntityToDto(detail: IndexDetailsEntity, labs: List<LabEntity>): IndexDetailsDto{
-        val labsDto = labs.map {
+    fun mapIndexDetailsEntityToDto(detail: IndexDetailsEntity?, labs: List<LabEntity>?): IndexDetailsDto{
+        val labsDto = labs!!.map {
             LabDto(
                 dateOfLab = it.dateOfLab,
                 points = it.points,
@@ -40,7 +40,7 @@ class IndexDetailsMapper {
         }
 
         return IndexDetailsDto(
-            group = detail.group,
+            group = detail!!.group,
             index = detail.index,
             labs = labsDto
         )

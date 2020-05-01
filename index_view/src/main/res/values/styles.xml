@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:fontFamily">@font/artifika</item>
+        <item name="android:textColor">@color/amberAccent</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <!-- Text Size -->
+        <item name="android:textSize">18sp</item>
+        <!-- Query Text Color -->
+        <item name="android:textColorPrimary">@color/amberAccent</item>
+        <!-- Hint Color -->
+        <item name="android:textColorHint">@color/lighter</item>
+        <!-- Icon Color -->
+        <item name="android:tint">@color/amberAccent</item>
+    </style>
+</resources>

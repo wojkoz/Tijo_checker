@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 val repositoryModule = module {
-    single<IndexRepository> {  IndexRepositoryImpl(networkRepository = get(), responseHandler = get(), database = get()) }
+    single<IndexRepository> { IndexRepositoryImpl(networkRepository = get(), responseHandler = get(), database = get()) }
     single<ResponseHandler> {ResponseHandlerImpl()}
 }
 
